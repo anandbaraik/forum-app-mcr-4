@@ -33,14 +33,15 @@ import { usePost } from '../context/AppContext';
           <Flex gap={2} alignItems={'center'}>
 		  	<Box>
 				<Flex gap={3}>
-					<FaArrowUp fontSize={'25'}
-						onClick={() => upvotePost(post.postId)} cursor="pointer"/>
+        <FaArrowDown fontSize={'25'}
+						onClick={() => downvotePost(post.postId)}
+						cursor="pointer"/>
 					<Text fontSize="sm">
 						{ (post.downvotes > post.upvotes) && ('-')} {post.upvotes}
 					</Text>
-					<FaArrowDown fontSize={'25'}
-						onClick={() => downvotePost(post.postId)}
-						cursor="pointer"/>
+          <FaArrowUp fontSize={'25'}
+						onClick={() => upvotePost(post.postId)} cursor="pointer"/>
+
 				</Flex>
 			  </Box>
               <Box w="50px" h="50px">

@@ -18,7 +18,6 @@ const PostDetailsPage = () => {
   const {id} = useParams();
   const {posts} = usePost();
   const post = posts?.find((post) => post.postId === id);
-  console.log(post);
   return (
     <>
       <Box h="full" p={2}>

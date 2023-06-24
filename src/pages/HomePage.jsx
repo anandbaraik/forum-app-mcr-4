@@ -9,13 +9,13 @@ import PostCard from '../components/PostCard';
 import { useState } from 'react';
 import { usePost } from '../context/AppContext';
 const HomePage = () => {
-  const {posts} = usePost();
+  const {posts, sortedBy} = usePost();
   return  (
     <>
       <Box h="full" p={2}>
         <Box p={2}>
           <Heading textAlign="center" fontSize={{ base: 'xl', lg: '2xl' }}>
-            Latest posts
+            {sortedBy}
           </Heading>
         </Box>
         <Divider />

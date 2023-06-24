@@ -5,6 +5,21 @@ const forumData = {
     picUrl: 'http://bit.ly/42Zm7tM',
     posts: [
       {
+        postId: '36698-343-321232',
+        username: 'trishajain',
+        name: 'Trisha Jain',
+        picUrl: 'http://bit.ly/42Zm7tM',
+        post: 'Can I learn HTML, CSS, and JavaScript in 1 year?',
+        postDescription:
+          'I am looking to make my career in web development and want to learn these technologies. Can I learn these in 1 year and get a job?',
+        upvotes: 150,
+        downvotes: 0,
+        tags: ['html', 'javascript', 'web development'],
+        createdAt: '2023-06-24T12:54:00Z',
+        comments: [],
+        isBookmarked: false,
+      },
+      {
         postId: '36635-787-65778',
         username: 'tanaypratap',
         name: 'Tanay Pratap',
@@ -27,22 +42,7 @@ const forumData = {
           },
         ],
         isBookmarked: false,
-      },
-      {
-        postId: '36698-343-321232',
-        username: 'trishajain',
-        name: 'Trisha Jain',
-        picUrl: 'http://bit.ly/42Zm7tM',
-        post: 'Can I learn HTML, CSS, and JavaScript in 1 year?',
-        postDescription:
-          'I am looking to make my career in web development and want to learn these technologies. Can I learn these in 1 year and get a job?',
-        upvotes: 150,
-        downvotes: 0,
-        tags: ['html', 'javascript', 'web development'],
-        createdAt: '2023-06-24T12:54:00Z',
-        comments: [],
-        isBookmarked: false,
-      },
+      }
     ],
   }
 

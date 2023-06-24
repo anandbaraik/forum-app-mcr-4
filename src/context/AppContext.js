@@ -4,6 +4,7 @@ const AppContext = createContext();
 export const AppProvider = ({ children }) => {
 const {posts:userPosts} = forumData;
 const [posts, setPosts] = useState(userPosts);
+const [sortedBy, setSortedBy] = useState("Latest posts");
 const upvotePost = (id) => {
     const upvotedPosts = posts?.map((post) => {
         if(post.postId === id) {
@@ -32,13 +33,27 @@ const bookmarkPost = (id) => {
     });
     setPosts(bookmarkedPosts);
 }
+
+const sortByMostUpvoted = (sortBy) => {
+  const sortedPosts = [...posts].sort((a, b) => b.upvotes - a.upvotes);
+  setSortedBy(sortBy);
+  setPosts(sortedPosts);
+}
+const sortByLatest = (sortBy) => {
+  const sortedPosts = [...posts].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+  setSortedBy(sortBy);
+  setPosts(sortedPosts);
+}
   return (
     <AppContext.Provider
       value={{
         posts,
         upvotePost,
         downvotePost,
-        bookmarkPost
+        bookmarkPost,
+        sortByMostUpvoted,
+        sortByLatest,
+        sortedBy
       }}
     >
       {children}

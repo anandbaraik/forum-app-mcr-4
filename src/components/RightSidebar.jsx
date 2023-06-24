@@ -6,9 +6,10 @@ import { Box, Flex, Text, useColorModeValue,  Button,
   MenuButton,
   MenuItem,
   MenuList, } from '@chakra-ui/react';
+import { usePost } from '../context/AppContext';
 const RightSidebar = () => {
+  const { sortByMostUpvoted, sortByLatest } = usePost();
   return (
-
     <Flex
       borderLeft="1px"
       display={{ base: 'none', lg: 'flex' }}
@@ -32,13 +33,13 @@ const RightSidebar = () => {
           <MenuList minW="8rem">
               <MenuItem
                 key={'latest'}
-                onClick={() => {}}
+                onClick={() => sortByLatest('Latest posts')}
               >
                 Latest
               </MenuItem>
               <MenuItem
                 key={'most_upvoted'}
-                onClick={() => {}}
+                onClick={() => sortByMostUpvoted('Most upvoted posts')}
               >
                 Most upvoted
               </MenuItem>

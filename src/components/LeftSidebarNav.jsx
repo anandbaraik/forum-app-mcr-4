@@ -9,9 +9,10 @@ import {
   Heading,
   IconButton,
 } from '@chakra-ui/react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useNavigate } from 'react-router-dom';
 import { FaUserCircle } from "react-icons/fa";
 const LeftSidebarNav = () => {
+  const navigate = useNavigate();
   return (
     <Flex
       h="full"
@@ -31,7 +32,7 @@ const LeftSidebarNav = () => {
         justifyContent={{ base: 'space-between', lg: 'flex-start' }}
         flexGrow={1}
       >
-        <Button display={{ base: 'none', lg: 'block' }}>
+        <Button display={{ base: 'none', lg: 'block' }} onClick={() => navigate('/')}>
           <Flex alignItems="center" gap={2} transition="all 0.1s linear">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -114,10 +115,9 @@ const LeftSidebarNav = () => {
         mb={{ base: '0', lg: '4' }}
         display={{ base: 'none', lg: 'flex' }}
       >
-        <ChakraLink
+        <Text
           w="full"
           as={Link}
-          to={`/profile/anandb`}
           borderRadius="full"
           p={2}
           _activeLink={{
@@ -139,7 +139,7 @@ const LeftSidebarNav = () => {
               <Text fontSize="sm">@{'anandbaraik'}</Text>
             </Flex>
           </Flex>
-        </ChakraLink>
+        </Text>
       </Flex>
     </Flex>
   )
